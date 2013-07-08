@@ -1,0 +1,12 @@
+/* GalleryJS (https://github.com/Imdsm/GalleryJS)
+ * Adam K Dean (Imdsm)
+ * 08/07/2013 16:32
+ */
+
+body { 
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+}
+
+.items { }
+.items .item { }
