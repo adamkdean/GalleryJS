@@ -7,13 +7,13 @@ $(function() {
 
 	var $container = $('.items');
 
-	// we use imagesLoaded here so that all images are downloaded 
-	// before isotope makes any width/height calculations.
-	$container.imagesLoaded( function(){
-		$container.isotope({
-			itemSelector: '.item'
-		});
+	$container.isotope({ itemSelector: '.item' });
+
+	//$newItems = $('<div class="item">test</div>');
+	//$container.isotope('insert', $newItems);
+
+	// does not work with file:// on chrome/safari ...
+	$.get('img/', function(data) {
+		console.log(data);
 	});
-
-
 });
