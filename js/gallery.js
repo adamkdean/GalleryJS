@@ -3,17 +3,18 @@
  * 08/07/2013 16:32
  */
 
-$(function() {
-
+$(function() {	
+	
 	var $container = $('.items');
-
 	$container.isotope({ itemSelector: '.item' });
 
-	//$newItems = $('<div class="item">test</div>');
-	//$container.isotope('insert', $newItems);
+	var format = '<div class="item"><img src="%src" /></div>';
 
-	// does not work with file:// on chrome/safari ...
-	$.get('img/', function(data) {
-		console.log(data);
+	$.getJSON('list.php', function(json) {		
+		for (var src in json) {			
+			$newItem = $(format.replace('%src', src));
+			$container.isotope('insert', $newItem);			
+			console.log($newItem);
+		}
 	});
 });
