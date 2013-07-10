@@ -1,4 +1,4 @@
 GalleryJS
 =========
 
-Photogallery based entirely on frontend JS with no backend.
+Photo Gallery based mainly on frontend JS with minimal backend and little management.
