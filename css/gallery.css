@@ -9,11 +9,15 @@
 body { 
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
-  margin: 20px 0;
 }
 
-.container { width: 800px; margin: 0 auto; }
-.container .items { margin: 0 auto; }
+.container { width: 800px; margin: 0 auto; padding: 20px; }
+
+.header { text-align: center; margin: 20px 0; }
+.header h1 { margin: 0; font-size: 350%; font-family: 'bebasregular'; color: #333; }
+.header h2 { margin: 0; font-size: 150%; font-family: 'robotolight'; color: #333; }
+
+.items { margin: 0 auto; }
 .items .item { width: 240px; }
 .items .item.active { width: 100%; }
 .items .item img { max-width: 100%; text-align: center; }
@@ -53,4 +57,38 @@ body {
       -ms-transition-duration: 0s;
        -o-transition-duration: 0s;
           transition-duration: 0s;
+}
+
+/**** Additional WebFonts ****/
+@font-face {
+  font-family: 'bebasregular';
+  src: url('../fonts/BEBAS___-webfont.eot');
+  src: url('../fonts/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/BEBAS___-webfont.woff') format('woff'),
+       url('../fonts/BEBAS___-webfont.ttf') format('truetype'),
+       url('../fonts/BEBAS___-webfont.svg#bebasregular') format('svg');
+  font-weight: normal;
+  font-style: normal;  
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/Roboto-Light-webfont.eot');
+    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'bebasregular';
+    src: url('../fonts/BEBAS___-webfont.svg#bebasregular') format('svg');
+  }
+  @font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+  }
 }
