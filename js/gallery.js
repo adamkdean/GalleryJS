@@ -21,7 +21,7 @@ $(function() {
 	$.getJSON('list.php', function(json) {		
 		// add each image, newest first
 		for (var src in json) {			
-			$newItem = $(format.replace('%src', src));
+			var $newItem = $(format.replace('%src', src));
 			$newItem.css({ opacity: 0 });
 			$newItem.imagesLoaded(function() {
 				$newItem.animate({ opacity: 1 });
