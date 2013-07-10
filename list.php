@@ -17,7 +17,7 @@ function list_images($path) {
 			}
 		}
 		closedir($dir);
-		arsort($list);
+		asort($list);
 	}
 	return $list;
 }
