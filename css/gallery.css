@@ -12,14 +12,12 @@ body {
   margin: 20px 0;
 }
 
-.items { margin: 0 auto; }
-
+.container { width: 800px; margin: 0 auto; }
+.container .items { margin: 0 auto; }
 .items .item { width: 240px; }
 .items .item.active { width: 100%; }
-
 .items .item img { max-width: 100%; text-align: center; }
 .items .item img:hover { cursor: pointer; }
-
 
 /**** Isotope transitions ****/
 .isotope,
