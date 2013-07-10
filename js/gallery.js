@@ -4,11 +4,13 @@
  */
 
 $(function() {	
-	
-	var $container = $('.items');
-	$container.isotope({ itemSelector: '.item' });
 
-	var format = '<div class="item"><img src="%src" /></div>';
+	var $container = $('.items');
+	$container.isotope({ 
+		itemSelector: '.item'
+	});
+
+	var format = '<div class="item"><img src="%src" /></div>';	
 
 	$.getJSON('list.php', function(json) {		
 		for (var src in json) {			
@@ -16,5 +18,8 @@ $(function() {
 			$container.isotope('insert', $newItem);			
 			console.log($newItem);
 		}
+		$container.imagesLoaded(function() {
+			$container.isotope('reLayout');
+		});
 	});
 });
