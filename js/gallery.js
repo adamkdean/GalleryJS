@@ -22,9 +22,10 @@ $(function() {
 		// add each image, newest first
 		for (var src in json) {			
 			var $newItem = $(format.replace('%src', src));
-			$newItem.css({ 'display' : 'none' });
+			$newItem.css({ 'opacity': '0' });
 			$newItem.imagesLoaded($newItem, function(data) {
-				$(data.elements[0]).css({ 'display' : 'block' });				
+				$(data.elements[0]).animate({ 'opacity': '1' });
+				$container.isotope('reLayout');
 			});	
 			$container.isotope('insert', $newItem);
 		}                
