@@ -23,15 +23,16 @@ body {
 .items .item img { max-width: 100%; text-align: center; }
 .items .item img:hover { cursor: pointer; }
 
+
 /**** Isotope transitions ****/
 .isotope,
 .isotope .isotope-item {
   /* change duration value to whatever you like */
-  -webkit-transition-duration: 0.4s;
-     -moz-transition-duration: 0.4s;
-      -ms-transition-duration: 0.4s;
-       -o-transition-duration: 0.4s;
-          transition-duration: 0.4s;
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+      -ms-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 .isotope {
   -webkit-transition-property: height, width;
