@@ -22,7 +22,7 @@ function list_images($path) {
 	return $list;
 }
 
-$list = list_images("img/");
+$list = list_images("photos/");
 echo json_encode($list);
 
 ?>
