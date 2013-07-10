@@ -18,6 +18,7 @@ body {
 .header h2 { margin: 0; font-size: 150%; font-family: 'robotolight'; color: #333; }
 
 .items { margin: 0 auto; }
+.items .loading { width: 40px; height: 40px; margin: 30px auto; }
 .items .item { width: 240px; }
 .items .item.active { width: 100%; }
 .items .item img { max-width: 100%; text-align: center; }

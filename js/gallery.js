@@ -17,7 +17,7 @@ $(function() {
 		}
 	});	
 
-	// grab a list of images from our PHP script
+	// grab a list of images from our PHP script	
 	$.getJSON('list.php', function(json) {		
 		// add each image, newest first
 		for (var src in json) {			
@@ -31,6 +31,9 @@ $(function() {
 
 		// once all the images are loaded, we recalculate the layout
 		$container.imagesLoaded(function() {
+			// hide loading gif
+			$container.children('.loading').hide();
+
 			// open the first image as though it's been clicked
 			$container.isotope('reLayout', function() {
 				if (openFirst) {
