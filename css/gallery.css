@@ -3,17 +3,25 @@
  * 08/07/2013 16:32
  */
 
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
 body { 
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
+  margin: 20px 0;
 }
 
-.items { width: 100%; }
-.items .item { display: inline-block; margin: 2px; }
-.items .item img { display: block; max-width: 200px; }
+.items { margin: 0 auto; }
+
+.items .item { width: 240px; }
+.items .item.active { width: 100%; }
+
+.items .item img { max-width: 100%; text-align: center; }
+.items .item img:hover { cursor: pointer; }
+
 
 /**** Isotope transitions ****/
-
 .isotope,
 .isotope .isotope-item {
   /* change duration value to whatever you like */
