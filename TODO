@@ -1,0 +1,6 @@
+TODO LIST
+=========
+
+When each item loads, it's still visible. This should not appear until it's loaded. It needs to load AND THEN add itself to the list. Do this.
+
+Also, because each time an item loads, it's relaying out the layout, the first image won't actually become bigger until you select another item, which causes two to become bigger. Fix this also.
