@@ -23,18 +23,18 @@ $(function() {
 		for (var src in json) {			
 			var $newItem = $(format.replace('%src', src));
 			$newItem.css({ 'opacity': '0' });
-			$newItem.imagesLoaded($newItem, function(data) {
+			$newItem.imagesLoaded($newItem, function(data) {				
 				$(data.elements[0]).animate({ 'opacity': '1' });
 				$container.isotope('reLayout');
+				if ($container.children('.loading').is(':visible')) {
+					$container.children('.loading').hide();
+				}
 			});	
 			$container.isotope('insert', $newItem);
 		}                
 
 		// once all the images are loaded, we recalculate the layout
 		$container.imagesLoaded(function() {
-			// hide loading gif
-			$container.children('.loading').hide();
-
 			// open the first image as though it's been clicked
 			$container.isotope('reLayout', function() {
 				if (openFirst) {
