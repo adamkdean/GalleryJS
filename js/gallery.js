@@ -26,25 +26,23 @@ $(function() {
 
 			var $newItem = $(format.replace('%src', src));
 			$newItem.hide();			
-			$newItem.imagesLoaded($newItem, function(data) {
-				$(data.elements[0]).show();
+			//$newItem.imagesLoaded($newItem, function(data) {
+				//$(data.elements[0]).show();
 				//$container.isotope('reLayout');
-				if ($('.loading').is(':visible')) $('.loading').remove();				
-			});	
+				
+			//});	
 			$container.isotope('insert', $newItem);
 		}                
 		
 		$container.imagesLoaded(function() {			
 			// once all the images are loaded, we recalculate the layout
-			
 
+			if ($('.loading').is(':visible')) $('.loading').remove();
+
+			$container.children().show();
 			$container.isotope('reLayout', function() {
-				// open the first image as though it's been clicked
-
-				if (openFirst) {
-					$container.children(':first').toggleClass('active');
-					$container.isotope('reLayout');
-				}
+				if (openFirst) $container.children(':first').toggleClass('active');
+				$container.isotope('reLayout');
 			});
 			
 			$container.delegate('.item', 'click', function() {
