@@ -3,10 +3,11 @@
  * 08/07/2013 16:32
  */
 
-$(function() {	
-	
+$(function() {
+
+	var format = '<div class="item"><img src="%src" /></div>';		
+	var pbItemsCount = 0, pbItemsLoaded = 0;
 	var openFirst = true;
-	var format = '<div class="item"><img src="%src" /></div>';	
 
 	var $container = $('.items');
 	$container.isotope({ 
@@ -20,17 +21,19 @@ $(function() {
 	$.getJSON('list.php', function(json) {		
 		// grab a list of images from our PHP script
 		
-		for (var src in json) {			
-			// add each image, newest first
-			// hide items until the photos within them have loaded			
+		pbItemsCount = json.length;
 
-			var $newItem = $(format.replace('%src', src));
+		for (var i in json) {			
+			// add each image, newest first
+			// hide items until the photos within them have loaded
+
+			var $newItem = $(format.replace('%src', json[i]));
 			$newItem.hide();			
-			//$newItem.imagesLoaded($newItem, function(data) {
-				//$(data.elements[0]).show();
-				//$container.isotope('reLayout');
-				
-			//});	
+			$newItem.imagesLoaded($newItem, function(data) {
+				pbItemsLoaded++;				
+				var pbWidth = (pbItemsLoaded / pbItemsCount) * 100;				
+				$(".progressbar .value").css({ 'width' : pbWidth + "%" });
+			});	
 			$container.isotope('insert', $newItem);
 		}                
 		

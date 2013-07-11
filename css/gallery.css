@@ -17,8 +17,11 @@ body {
 .header h1 { margin: 0; font-size: 350%; font-family: 'bebasregular'; color: #333; }
 .header h2 { margin: 0; font-size: 150%; font-family: 'robotolight'; color: #333; }
 
-.loading { width: 100%; padding: 50px 0; text-align: center; }
-.loading p { font-size: 80%; color: #ccc; }
+.loading { width: 100%; padding: 100px 0; text-align: center; }
+.loading p { font-size: 90%; color: #ccc; }
+
+.loading .progressbar { margin: 0 auto; width: 200px; height: 24px; border: 1px solid #ccc; padding: 1px; }
+.loading .progressbar .value { width: 0%; height: 20px; background: #ccc; }
 
 .items { margin: 0 auto; }
 .items .item { width: 240px; }

@@ -22,8 +22,8 @@ function list_images($path) {
 			if ($file != "." && $file != "..") {
 				// small hack to make each picture load again
 				$rand = $file . "?r=" . rand(10000, 99999);
-				//$list["img.php?src=" . $rand] = filemtime($path . $file);
-				$list[$path . $rand] = filemtime($path . $file);
+				$list["img.php?src=" . $rand] = filemtime($path . $file);
+				//$list[$path . $rand] = filemtime($path . $file);
 			}
 		}
 		closedir($dir);
@@ -33,6 +33,21 @@ function list_images($path) {
 }
 
 $list = list_images("photos/");
-echo json_encode($list);
+
+/*$output = "[";
+foreach($list as $k => $v) {
+	$output .= '{"' . $k . '"},';
+	//$output .= ","; 
+}
+$output = substr($output, 0, strlen($output) - 1);
+$output .= "]";
+
+echo $output;*/
+
+$array = array();
+foreach($list as $k => $v) {
+	$array[] = $k;
+}
+echo json_encode($array);
 
 ?>
