@@ -16,35 +16,39 @@ $(function() {
 			gutterWidth: 1
 		}
 	});	
-
-	// grab a list of images from our PHP script	
+	
 	$.getJSON('list.php', function(json) {		
-		// add each image, newest first
+		// grab a list of images from our PHP script
+		
 		for (var src in json) {			
+			// add each image, newest first
+			// hide items until the photos within them have loaded			
+
 			var $newItem = $(format.replace('%src', src));
-			$newItem.css({ 'opacity': 0 });
-			$newItem.imagesLoaded($newItem, function(data) {				
-				$(data.elements[0]).css({ 'opacity': 1 });
+			$newItem.hide();			
+			$newItem.imagesLoaded($newItem, function(data) {
+				$(data.elements[0]).show();
 				$container.isotope('reLayout');
-				if ($container.children('.loading').is(':visible')) {
-					$container.children('.loading').remove();
-				}
+				if ($('.loading').is(':visible')) $('.loading').remove();				
 			});	
 			$container.isotope('insert', $newItem);
 		}                
+		
+		$container.imagesLoaded(function() {			
+			// once all the images are loaded, we recalculate the layout
 
-		// once all the images are loaded, we recalculate the layout
-		$container.imagesLoaded(function() {
-			// open the first image as though it's been clicked
 			$container.isotope('reLayout', function() {
+				// open the first image as though it's been clicked
+
 				if (openFirst) {
 					$container.children(':first').toggleClass('active');
 					$container.isotope('reLayout');
 				}
 			});
+			
+			$container.delegate('.item', 'click', function() {
+				// change size of clicked element
 
-			// change size of clicked element
-			$container.delegate('.item', 'click', function(){				
 				$(this).toggleClass('active');
 				$container.isotope('reLayout');
 			});

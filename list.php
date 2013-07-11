@@ -22,7 +22,7 @@ function list_images($path) {
 			if ($file != "." && $file != "..") {
 				// small hack to make each picture load again
 				$rand = $file . "?r=" . rand(10000, 99999);
-				$list[$path . $rand] = filemtime($path . $file);
+				$list["img.php?src=" . $rand] = filemtime($path . $file);
 			}
 		}
 		closedir($dir);

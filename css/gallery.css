@@ -17,8 +17,10 @@ body {
 .header h1 { margin: 0; font-size: 350%; font-family: 'bebasregular'; color: #333; }
 .header h2 { margin: 0; font-size: 150%; font-family: 'robotolight'; color: #333; }
 
+.loading { width: 100%; padding: 50px 0; text-align: center; }
+.loading p { font-size: 80%; color: #ccc; }
+
 .items { margin: 0 auto; }
-.items .loading { width: 40px; height: 40px; margin: 30px auto; }
 .items .item { width: 240px; }
 .items .item.active { width: 100%; }
 .items .item img { max-width: 100%; text-align: center; }
