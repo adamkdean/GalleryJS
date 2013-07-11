@@ -28,7 +28,7 @@ $(function() {
 			$newItem.hide();			
 			$newItem.imagesLoaded($newItem, function(data) {
 				$(data.elements[0]).show();
-				$container.isotope('reLayout');
+				//$container.isotope('reLayout');
 				if ($('.loading').is(':visible')) $('.loading').remove();				
 			});	
 			$container.isotope('insert', $newItem);
@@ -36,6 +36,7 @@ $(function() {
 		
 		$container.imagesLoaded(function() {			
 			// once all the images are loaded, we recalculate the layout
+			
 
 			$container.isotope('reLayout', function() {
 				// open the first image as though it's been clicked
@@ -49,7 +50,7 @@ $(function() {
 			$container.delegate('.item', 'click', function() {
 				// change size of clicked element
 
-				$(this).toggleClass('active');
+    			$(this).toggleClass('active');
 				$container.isotope('reLayout');
 			});
 		});
